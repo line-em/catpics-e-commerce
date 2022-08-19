@@ -1,0 +1,17 @@
+:root {
+	--font-sans: "Barlow", Helvetica, Arial, sans-serif;
+	--font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+	--font-thin: 300;
+	--font-regular: 400;
+	--font-bold: 600;
+
+	--purple-accent: rgb(113, 30, 101);
+	--purple-accent-light: rgb(213, 160, 219);
+	--red-accent: rgb(205, 48, 61);
+	--green-accent: rgb(78, 218, 120);
+	--green-accent-darken: rgb(26, 155, 86);
+	--white: rgb(233, 218, 218);
+	--black: rgb(41, 29, 47);
+
+	--box-shadow: 0 5px 15px rgba(63, 45, 58, 0.306);
+}

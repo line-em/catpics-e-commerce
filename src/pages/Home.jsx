@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import titles from "../../data/titles";
 import { Grid } from "../components/Grid";
+import titles from "../data/titles";
 
 export const Home = () => {
 	const [catPics, setCatPics] = useState({});
