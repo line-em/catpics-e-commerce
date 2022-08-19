@@ -1,41 +1,10 @@
-import { useEffect, useState } from "react";
-import { Grid } from "../components/Grid";
-import titles from "../data/titles";
+import { useContext } from "react";
+import { GridItem } from "../components/GridItem";
+import { SiteContext } from "../context/SiteContext";
 
 export const Home = () => {
-	const [catPics, setCatPics] = useState({});
-	const [loading, setLoading] = useState(false);
+	const { catPics } = useContext(SiteContext);
 
-	// Random price between 50 and 150
-	const randomPrice = () => Math.floor(Math.random() * 151) + 50;
-	const randomTitle = () => titles[Math.floor(Math.random() * titles.length)].title;
-
-	const options = {
-		method: "GET",
-		headers: { "x-api-key": import.meta.env.VITE_API_KEY }
-	};
-
-	useEffect(() => {
-		setLoading(true);
-		fetch("https://api.thecatapi.com/v1/images/search?limit=15&mime_types=jpg,png", options)
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				setCatPics(
-					data.map((pic) => {
-						return {
-							url: pic.url,
-							title: randomTitle(),
-							price: randomPrice(),
-							width: pic.width,
-							height: pic.height
-						};
-					})
-				);
-				setLoading(false);
-			})
-			.catch((err) => console.error(err));
-	}, []);
 	return (
 		<div>
 			<h1>Hey there! 😺</h1>
@@ -53,8 +22,8 @@ export const Home = () => {
 			<h1>This week Pics...</h1>
 			<div className="grid_container">
 				{catPics.length > 0 ? (
-					catPics.map((pic, i) => {
-						return <Grid catPics={pic} />;
+					catPics.map((pic) => {
+						return <GridItem catPics={pic} />;
 					})
 				) : (
 					<h2>Loading...</h2>

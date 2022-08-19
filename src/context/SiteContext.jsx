@@ -1,8 +1,40 @@
-// import { createContext } from "react";
+import { createContext, useState } from "react";
+import titles from "../data/titles";
 
-// const SiteContext = createContext();
-// const SiteContextProvider = ({ children }) => {
-// 	return <SiteContext.Provider>{children}</SiteContext.Provider>;
-// };
+const SiteContext = createContext();
+const SiteContextProvider = ({ children }) => {
+	const [catPics, setCatPics] = useState([]);
 
-// export { SiteContext, SiteContextProvider };
+	// Random price between 50 and 150
+	const randomPrice = () => Math.floor(Math.random() * 151) + 50;
+	const randomTitle = () => titles[Math.floor(Math.random() * titles.length)].title;
+
+	const options = {
+		method: "GET",
+		headers: { "x-api-key": import.meta.env.VITE_API_KEY }
+	};
+
+	useEffect(() => {
+		fetch("https://api.thecatapi.com/v1/images/search?limit=15&mime_types=jpg,png", options)
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setCatPics([
+					data.map((pic) => {
+						return {
+							url: pic.url,
+							title: randomTitle(),
+							price: randomPrice(),
+							width: pic.width,
+							height: pic.height
+						};
+					})
+				]);
+			})
+			.catch((err) => console.error(err));
+	}, []);
+
+	return <SiteContext.Provider value={{ catPics }}>{children}</SiteContext.Provider>;
+};
+
+export { SiteContext, SiteContextProvider };
