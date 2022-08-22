@@ -1,4 +1,3 @@
-import { ShoppingCart } from "phosphor-react";
 import { useToggle } from "../hooks/useToggle";
 import { Button } from "./Button";
 import { Modal } from "./Modal";
@@ -10,11 +9,16 @@ export const GridItem = ({ catPics }) => {
 
 	return (
 		<>
-			<div className={` grid_container__item`}>
-				<div className="grid_container__img" onClick={() => toggleModal()}>
-					<span className="grid__hoverElement">
-						<ShoppingCart />
-					</span>
+			<div className={` grid_container__item`} key={url}>
+				<div
+					className="grid_container__img"
+					onClick={() => toggleModal()}
+					onMouseEnter={toggleHover}
+					onMouseLeave={toggleHover}
+				>
+					<div className={`grid__hoverElement ${hover ? "display" : "display_none"}`}>
+						<Button classes="btn-round" type="info" handleFunction={toggleModal} />
+					</div>
 					<img src={url} alt={title} />
 				</div>
 				<div className="grid_container__info">

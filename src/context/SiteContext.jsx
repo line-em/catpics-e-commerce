@@ -11,15 +11,15 @@ const SiteContextProvider = ({ children }) => {
 
 	const options = {
 		method: "GET",
-		headers: { "x-api-key": import.meta.env.VITE_API_KEY }
+		headers: { "x-api-key": "9ccd3bc8-48d1-481a-a7de-3f0f240b381c" }
+		// headers: { "x-api-key": import.meta.env.VITE_API_KEY }
 	};
 
 	useEffect(() => {
 		fetch("https://api.thecatapi.com/v1/images/search?limit=15&mime_types=jpg,png", options)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
-				setCatPics([
+				setCatPics(
 					data.map((pic) => {
 						return {
 							url: pic.url,
@@ -29,7 +29,7 @@ const SiteContextProvider = ({ children }) => {
 							height: pic.height
 						};
 					})
-				]);
+				);
 			})
 			.catch((err) => console.error(err));
 	}, []);

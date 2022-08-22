@@ -25,6 +25,15 @@
 	transition: all 0.2s ease-in-out;
 }
 
+.btn-round {
+	border-radius: 50%;
+	padding: 5px;
+	background-color: var(--black-05);
+	box-shadow: var(--box-shadow);
+	color: var(--white);
+	font-size: 24px;
+}
+
 .btn-icon {
 	display: flex;
 	align-items: center;
@@ -37,7 +46,12 @@
 	color: var(--white);
 }
 
-.btn:hover {
+.btn-round:hover {
+	background-color: var(--purple-accent-light);
+	color: var(--black-05);
+}
+
+.btn:not(.btn-round):hover {
 	padding: 0.5rem 1.2rem;
 	background-color: var(--green-accent-darken);
 	color: var(--white);
@@ -60,6 +74,7 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 2;
 }
 
 .modal__content {
@@ -77,6 +92,7 @@
 	box-shadow: var(--box-shadow);
 	height: 75%;
 	width: 50%;
+	z-index: 3;
 }
 
 .modal__nav {

@@ -35,3 +35,11 @@ main > *:first-child {
 		width: 100%;
 	}
 }
+
+.display_none {
+	display: none;
+}
+
+.display {
+	display: flex;
+}

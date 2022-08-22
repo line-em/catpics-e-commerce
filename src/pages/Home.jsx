@@ -4,7 +4,7 @@ import { SiteContext } from "../context/SiteContext";
 
 export const Home = () => {
 	const { catPics } = useContext(SiteContext);
-
+	console.log(catPics);
 	return (
 		<div>
 			<h1>Hey there! 😺</h1>
@@ -22,8 +22,8 @@ export const Home = () => {
 			<h1>This week Pics...</h1>
 			<div className="grid_container">
 				{catPics.length > 0 ? (
-					catPics.map((pic, i) => {
-						return <GridItem catPics={pic} key={pic.id} />;
+					catPics.map((pic) => {
+						return <GridItem catPics={pic} key={pic.url} />;
 					})
 				) : (
 					<h2>Loading...</h2>
