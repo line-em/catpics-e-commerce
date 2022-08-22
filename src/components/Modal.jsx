@@ -1,10 +1,9 @@
 // import { useContext } from "react";
 // import { SiteContext } from "../context/SiteContext";
 import { Button } from "./Button";
+import { GridInfo } from "./GridInfo";
 
-export const Modal = ({ url, title, price, showModal, toggleModal }) => {
-	// const [showModal, toggleModal] = useContext(SiteContext);
-
+export const Modal = ({ url, title, price, isInCart, showModal, toggleModal }) => {
 	const modalStyle = {
 		display: showModal ? "flex" : "none"
 	};
@@ -19,13 +18,7 @@ export const Modal = ({ url, title, price, showModal, toggleModal }) => {
 				<div className="modal__img">
 					<img src={url} alt={title} />
 				</div>
-				<h4>{title}</h4>
-				<p className="grid_container__price">$ {price}</p>
-				<Button
-					classes="btn-icon"
-					type="addCart"
-					onClick={() => console.log("To cart...")}
-				/>
+				<GridInfo url={url} title={title} price={price} isInCart={isInCart} />
 			</div>
 		</>
 	);

@@ -36,16 +36,14 @@ const SiteContextProvider = ({ children }) => {
 			.catch((err) => console.error(err));
 	}, []);
 
-	const addToCart = (item) => {
+	const addToCart = (url) => {
 		// setCart([...cart, item]);
-		setCatPics(catPics.map((pic) => (pic.url === item.url ? { ...pic, isInCart: true } : pic)));
+		setCatPics(catPics.map((pic) => (pic.url === url ? { ...pic, isInCart: true } : pic)));
 	};
 
-	const removeFromCart = (item) => {
+	const removeFromCart = (url) => {
 		// setCart(cart.filter((cartItem) => cartItem.url !== item.url));
-		setCatPics(
-			catPics.map((pic) => (pic.url === item.url ? { ...pic, isInCart: false } : pic))
-		);
+		setCatPics(catPics.map((pic) => (pic.url === url ? { ...pic, isInCart: false } : pic)));
 	};
 
 	return (

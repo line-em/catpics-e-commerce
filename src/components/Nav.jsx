@@ -1,14 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { ShoppingCart, Cat } from "phosphor-react";
 import { SiteContext } from "../context/SiteContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 export const Nav = () => {
 	const { catPics } = useContext(SiteContext);
-
 	const itemsInCart = catPics.filter((pic) => pic.isInCart).length;
-
-	console.log(itemsInCart);
 
 	return (
 		<nav className="navbar">
@@ -22,9 +19,7 @@ export const Nav = () => {
 				<ul>
 					<li>Your Cart:</li>
 					<li>
-						{itemsInCart > 0 ? (
-							<span className="nav_cart_items">{itemsInCart}</span>
-						) : null}
+						<span className="nav_cart_items">{itemsInCart}</span>
 						<ShoppingCart size={20} weight={"bold"} />
 					</li>
 				</ul>

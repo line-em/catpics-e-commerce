@@ -1,6 +1,6 @@
 import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
-import { GridItem } from "../components/GridItem";
+import { ItemGrid } from "../components/ItemGrid";
 
 function Cart() {
 	const { catPics } = useContext(SiteContext);
@@ -12,20 +12,21 @@ function Cart() {
 	return (
 		<>
 			<h1>Cart Items</h1>
-			<div className="grid_container">
+			<section className="grid_container grid_container_cart">
 				{itemsInCart > 0 ? (
 					<>
 						{listInCart.map((pic) => {
-							return <GridItem key={pic.url} catPics={pic} />;
+							return <ItemGrid key={pic.url} catPics={pic} />;
 						})}
-						<hr />
-						<strong>Total Price:</strong>
-						<span>${total}</span>
+						<article className="grid_container__total_price">
+							<h3>Total Price:</h3>
+							<span className="grid_container__price">${total}</span>
+						</article>
 					</>
 				) : (
 					<h2>No items in cart</h2>
 				)}
-			</div>
+			</section>
 		</>
 	);
 }
