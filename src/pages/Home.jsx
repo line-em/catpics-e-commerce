@@ -22,8 +22,8 @@ export const Home = () => {
 			<h1>This week Pics...</h1>
 			<div className="grid_container">
 				{catPics.length > 0 ? (
-					catPics.map((pic) => {
-						return <GridItem catPics={pic} />;
+					catPics.map((pic, i) => {
+						return <GridItem catPics={pic} key={pic.id} />;
 					})
 				) : (
 					<h2>Loading...</h2>
