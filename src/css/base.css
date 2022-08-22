@@ -2,6 +2,16 @@ h1 {
 	font: var(--font-bold) 2.5rem/1.5 var(--font-serif);
 }
 
+h2 {
+	font: var(--font-bold) 2rem var(--font-serif);
+}
+
+@media screen and (max-width: 400px) {
+	h2 {
+		font-size: 1.5rem;
+	}
+}
+
 h4 {
 	margin-block-start: 0.5rem;
 }
@@ -26,6 +36,10 @@ hr {
 	margin: 1.5rem 0;
 }
 
+p {
+	display: block;
+}
+
 main {
 	display: flex;
 	flex-direction: column;
@@ -37,6 +51,12 @@ main {
 
 main > *:first-child {
 	margin-top: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+	main {
+		width: 80%;
+	}
 }
 
 @media screen and (max-width: 900px) {

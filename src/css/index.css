@@ -55,6 +55,13 @@
 	transition: all 0.2s ease-in-out;
 }
 
+@media screen and (max-width: 300px) {
+	.btn {
+		padding: 0.3rem 0.5rem;
+		font-size: 0.9rem;
+	}
+}
+
 .btn-round {
 	border-radius: 50%;
 	padding: 5px;

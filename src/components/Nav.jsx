@@ -17,7 +17,7 @@ export const Nav = () => {
 			</Link>
 			<NavLink to="/cart">
 				<ul>
-					<li>Your Cart:</li>
+					<li>Cart:</li>
 					<li>
 						<span className="nav_cart_items">{itemsInCart}</span>
 						<ShoppingCart size={20} weight={"bold"} />
