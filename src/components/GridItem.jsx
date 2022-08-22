@@ -10,7 +10,7 @@ export const GridItem = ({ catPics }) => {
 	const [hover, toggleHover] = useToggle(false);
 	const [isInCart, toggleIsInCart] = useToggle(false);
 
-	const { cart, addToCart, removeFromCart } = useContext(SiteContext);
+	const { addToCart, removeFromCart } = useContext(SiteContext);
 
 	return (
 		<>
@@ -38,7 +38,6 @@ export const GridItem = ({ catPics }) => {
 							type="removeCart"
 							handleFunction={() => {
 								removeFromCart(catPics);
-								console.log(cart);
 								toggleIsInCart();
 							}}
 						/>
@@ -48,7 +47,6 @@ export const GridItem = ({ catPics }) => {
 							type="addCart"
 							handleFunction={() => {
 								addToCart(catPics);
-								console.log(cart);
 								toggleIsInCart();
 							}}
 						/>

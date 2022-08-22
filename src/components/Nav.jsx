@@ -4,9 +4,11 @@ import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
 
 export const Nav = () => {
-	const { cart } = useContext(SiteContext);
+	const { catPics } = useContext(SiteContext);
 
-	const itemsInCart = cart.length;
+	const itemsInCart = catPics.filter((pic) => pic.isInCart).length;
+
+	console.log(itemsInCart);
 
 	return (
 		<nav className="navbar">
@@ -21,7 +23,7 @@ export const Nav = () => {
 					<li>Your Cart:</li>
 					<li>
 						{itemsInCart > 0 ? (
-							<span className="nav_cart_items">{cart.length}</span>
+							<span className="nav_cart_items">{itemsInCart}</span>
 						) : null}
 						<ShoppingCart size={20} weight={"bold"} />
 					</li>
