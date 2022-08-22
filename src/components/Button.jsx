@@ -11,7 +11,7 @@ export const Button = (props) => {
 			)}
 			{props.type === "removeCart" && (
 				<>
-					<ShoppingCart weight="duotone" />
+					<ShoppingCart weight="duotone" size={20} />
 					Remove
 				</>
 			)}
