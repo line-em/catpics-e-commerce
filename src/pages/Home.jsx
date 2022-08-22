@@ -1,10 +1,10 @@
-import { useContext } from "react";
 import { GridItem } from "../components/GridItem";
+import { useContext } from "react";
 import { SiteContext } from "../context/SiteContext";
 
 export const Home = () => {
-	const { catPics } = useContext(SiteContext);
-	console.log(catPics);
+	const { catPics, cart, addToCart, removeFromCart } = useContext(SiteContext);
+
 	return (
 		<div>
 			<h1>Hey there! 😺</h1>

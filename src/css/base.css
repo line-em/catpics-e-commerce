@@ -6,6 +6,11 @@ h4 {
 	margin-block-start: 0.5rem;
 }
 
+a {
+	color: var(--white);
+	text-decoration: none;
+}
+
 strong {
 	font-weight: var(--font-bold);
 	color: var(--purple-accent);

@@ -4,6 +4,7 @@ import titles from "../data/titles";
 const SiteContext = createContext();
 const SiteContextProvider = ({ children }) => {
 	const [catPics, setCatPics] = useState([]);
+	const [cart, setCart] = useState([]);
 
 	// Random price between 50 and 150
 	const randomPrice = () => Math.floor(Math.random() * 151) + 50;
@@ -34,7 +35,19 @@ const SiteContextProvider = ({ children }) => {
 			.catch((err) => console.error(err));
 	}, []);
 
-	return <SiteContext.Provider value={{ catPics }}>{children}</SiteContext.Provider>;
+	const addToCart = (item) => {
+		setCart([...cart, item]);
+	};
+
+	const removeFromCart = (item) => {
+		setCart(cart.filter((cartItem) => cartItem !== item));
+	};
+
+	return (
+		<SiteContext.Provider value={{ catPics, cart, addToCart, removeFromCart }}>
+			{children}
+		</SiteContext.Provider>
+	);
 };
 
 export { SiteContext, SiteContextProvider };

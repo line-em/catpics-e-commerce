@@ -9,13 +9,13 @@ export const Button = (props) => {
 					Add to Cart
 				</>
 			)}
-			{props.type === "info" && <Info weight="duotone" />}
 			{props.type === "removeCart" && (
 				<>
 					<ShoppingCart weight="duotone" />
-					Remove from Cart
+					Remove
 				</>
 			)}
+			{props.type === "info" && <Info weight="duotone" />}
 			{props.type === "close" && (
 				<>
 					<X weight="bold" />
