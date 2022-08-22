@@ -58,5 +58,25 @@ export default [
 	{
 		id: 15,
 		title: "Le Meow"
+	},
+	{
+		id: 16,
+		title: "Stay PAWsitive!"
+	},
+	{
+		id: 17,
+		title: "I'm just kitten around."
+	},
+	{
+		id: 18,
+		title: "I'm feline sad."
+	},
+	{
+		id: 19,
+		title: "Whisker me away!"
+	},
+	{
+		id: 20,
+		title: "I'm feline good."
 	}
 ];

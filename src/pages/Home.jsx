@@ -13,10 +13,18 @@ export const Home = () => {
 		<>
 			<About />
 			<hr />
-			<h1>This week Pics...</h1>
+			<h1>This session Pics...</h1>
 			<section className="grid_container">
 				{catPics.length > 0 ? allItems : <h2>Loading...</h2>}
 			</section>
+			<hr />
+			<footer>
+				Made by{" "}
+				<a href="https://github.com/line-em" target="_blank" rel="noopener noreferrer">
+					@Line-Em
+				</a>{" "}
+				with ❤️ and tea.
+			</footer>
 		</>
 	);
 };

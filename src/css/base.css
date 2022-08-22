@@ -11,6 +11,10 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	color: var(--green-accent-darker);
+}
+
 strong {
 	font-weight: var(--font-bold);
 	color: var(--purple-accent);
@@ -47,4 +51,16 @@ main > *:first-child {
 
 .display {
 	display: flex;
+}
+
+footer {
+	margin: 20px 0;
+	text-align: center;
+}
+
+footer a {
+	color: var(--red-accent);
+	margin: 0 5px;
+	text-transform: lowercase;
+	border-bottom: 1px solid var(--purple-accent-light);
 }
