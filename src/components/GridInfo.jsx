@@ -2,6 +2,7 @@ import { useToggle } from "../hooks/useToggle";
 import { Button } from "./Button";
 import { useContext, useEffect } from "react";
 import { SiteContext } from "../context/SiteContext";
+import PropTypes from "prop-types";
 
 export const GridInfo = ({ price, url, title, type, isInCart }) => {
 	const [inCart, toggleInCart] = useToggle(false);
@@ -38,4 +39,12 @@ export const GridInfo = ({ price, url, title, type, isInCart }) => {
 			)}
 		</div>
 	);
+};
+
+GridInfo.propTypes = {
+	price: PropTypes.number,
+	url: PropTypes.string,
+	title: PropTypes.string,
+	type: PropTypes.string,
+	isInCart: PropTypes.bool
 };

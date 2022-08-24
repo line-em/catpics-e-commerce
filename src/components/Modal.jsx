@@ -1,7 +1,6 @@
-// import { useContext } from "react";
-// import { SiteContext } from "../context/SiteContext";
 import { Button } from "./Button";
 import { GridInfo } from "./GridInfo";
+import PropTypes from "prop-types";
 
 export const Modal = ({ url, title, price, isInCart, showModal, toggleModal }) => {
 	const modalStyle = {
@@ -22,4 +21,13 @@ export const Modal = ({ url, title, price, isInCart, showModal, toggleModal }) =
 			</div>
 		</>
 	);
+};
+
+Modal.propTypes = {
+	url: PropTypes.string,
+	title: PropTypes.string,
+	price: PropTypes.number,
+	isInCart: PropTypes.bool,
+	showModal: PropTypes.bool,
+	toggleModal: PropTypes.func
 };

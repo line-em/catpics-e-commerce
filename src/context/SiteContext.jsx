@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import React from "react";
+import PropTypes from "prop-types";
 import titles from "../data/titles";
 
 const SiteContext = createContext();
@@ -35,6 +35,8 @@ const SiteContextProvider = ({ children }) => {
 			.catch((err) => console.error(err));
 	}, []);
 
+	const itemsInCart = catPics.filter((pic) => pic.isInCart);
+
 	const addToCart = (url) => {
 		setCatPics(catPics.map((pic) => (pic.url === url ? { ...pic, isInCart: true } : pic)));
 	};
@@ -48,10 +50,16 @@ const SiteContextProvider = ({ children }) => {
 	};
 
 	return (
-		<SiteContext.Provider value={{ catPics, addToCart, removeFromCart, removeAll }}>
+		<SiteContext.Provider
+			value={{ catPics, itemsInCart, addToCart, removeFromCart, removeAll }}
+		>
 			{children}
 		</SiteContext.Provider>
 	);
 };
 
 export { SiteContext, SiteContextProvider };
+
+SiteContextProvider.propTypes = {
+	children: PropTypes.element.isRequired
+};

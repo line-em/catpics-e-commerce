@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom";
 import { ShoppingCart, Cat } from "phosphor-react";
 import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
-import React from "react";
 
 export const Nav = () => {
 	const { itemsInCart } = useContext(SiteContext);

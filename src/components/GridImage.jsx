@@ -1,5 +1,6 @@
 import { Button } from "./Button";
 import { Modal } from "./Modal";
+import PropTypes from "prop-types";
 import { useToggle } from "../hooks/useToggle";
 
 export const GridImage = ({ url, title, price, isInCart }) => {
@@ -29,4 +30,11 @@ export const GridImage = ({ url, title, price, isInCart }) => {
 			/>
 		</>
 	);
+};
+
+GridImage.propTypes = {
+	price: PropTypes.number,
+	url: PropTypes.string,
+	title: PropTypes.string,
+	isInCart: PropTypes.bool
 };

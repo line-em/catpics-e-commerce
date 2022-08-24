@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { ShoppingCart, X, Info } from "phosphor-react";
 
 export const Button = (props) => {
@@ -31,4 +31,10 @@ export const Button = (props) => {
 			)}
 		</button>
 	);
+};
+
+Button.propTypes = {
+	classes: PropTypes.string,
+	type: PropTypes.string,
+	handleFunction: PropTypes.func
 };

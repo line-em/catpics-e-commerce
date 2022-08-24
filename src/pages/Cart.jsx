@@ -1,7 +1,6 @@
 import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
 import { ItemGrid } from "../components/ItemGrid";
-import React from "react";
 import { Button } from "../components/Button";
 
 function Cart() {
