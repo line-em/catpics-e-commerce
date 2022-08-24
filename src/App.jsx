@@ -11,9 +11,11 @@ function App() {
 			<Nav />
 			<main>
 				<Routes>
-					<Route index path="/" element={<Home />} />
-					<Route path={`/cart`} element={<Cart />} />
-					<Route path="/checkout" element={<Checkout />} />
+					<Route path="/catpics-e-commerce" element={<Home />}>
+						<Route index element={<Home />} />
+						<Route path="/cart" element={<Cart />} />
+						<Route path="/checkout" element={<Checkout />} />
+					</Route>
 				</Routes>
 			</main>
 		</SiteContextProvider>
