@@ -2,12 +2,19 @@ import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
 import { ItemGrid } from "../components/ItemGrid";
 import { Button } from "../components/Button";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
 	const { itemsInCart, removeAll } = useContext(SiteContext);
+	const navigate = useNavigate();
 
 	const itemsLength = itemsInCart.length;
 	const total = itemsInCart.reduce((acc, curr) => acc + curr.price, 0);
+
+	const fulfillOrder = () => {
+		navigate("../checkout", { replace: true });
+		removeAll();
+	};
 
 	return (
 		<>
@@ -39,7 +46,7 @@ function Cart() {
 						<h3>Total Price:</h3>
 						<span className="grid_container__price">${total}</span>
 						<hr />
-						<Button type="checkout" classes="btn-icon" handleFunction={removeAll} />
+						<Button type="checkout" classes="btn-icon" handleFunction={fulfillOrder} />
 					</article>
 				)}
 			</div>

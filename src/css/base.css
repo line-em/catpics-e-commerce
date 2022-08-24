@@ -16,9 +16,17 @@ h4 {
 	margin-block-start: 0.5rem;
 }
 
-a {
+nav a {
 	color: var(--white);
 	text-decoration: none;
+	border: none;
+}
+
+a {
+	color: var(--red-accent);
+	margin: 0 5px;
+	text-transform: lowercase;
+	border-bottom: 1px solid var(--purple-accent-light);
 }
 
 a:hover {
@@ -76,11 +84,4 @@ main > *:first-child {
 footer {
 	margin: 20px 0;
 	text-align: center;
-}
-
-footer a {
-	color: var(--red-accent);
-	margin: 0 5px;
-	text-transform: lowercase;
-	border-bottom: 1px solid var(--purple-accent-light);
 }

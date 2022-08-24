@@ -12,7 +12,7 @@ const SiteContextProvider = ({ children }) => {
 	const options = {
 		method: "GET",
 		// headers: { "x-api-key": "9ccd3bc8-48d1-481a-a7de-3f0f240b381c" }
-		headers: { "x-api-key": import.meta.env.SECRET_KEY }
+		headers: { "x-api-key": import.meta.env.VITE_KEY }
 	};
 
 	useEffect(() => {
@@ -61,5 +61,5 @@ const SiteContextProvider = ({ children }) => {
 export { SiteContext, SiteContextProvider };
 
 SiteContextProvider.propTypes = {
-	children: PropTypes.element.isRequired
+	children: PropTypes.any.isRequired
 };

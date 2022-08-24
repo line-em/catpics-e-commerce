@@ -89,6 +89,14 @@
 	border-radius: 1rem;
 }
 
+@media screen and (max-width: 520px) {
+	.grid_container__total_price {
+		margin: 0.5rem auto;
+		flex-basis: auto;
+		padding: calc(5vw + 2rem);
+	}
+}
+
 .flex-75 {
 	flex-basis: 60%;
 }
