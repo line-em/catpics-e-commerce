@@ -1,19 +1,18 @@
 import { createContext, useEffect, useState } from "react";
+import React from "react";
 import titles from "../data/titles";
 
 const SiteContext = createContext();
 const SiteContextProvider = ({ children }) => {
 	const [catPics, setCatPics] = useState([]);
-	// const [cart, setCart] = useState([]);
 
-	// Random price between 50 and 150
 	const randomPrice = () => Math.floor(Math.random() * 151) + 50;
 	const randomTitle = () => titles[Math.floor(Math.random() * titles.length)].title;
 
 	const options = {
 		method: "GET",
-		headers: { "x-api-key": "9ccd3bc8-48d1-481a-a7de-3f0f240b381c" }
-		// headers: { "x-api-key": import.meta.env.VITE_API_KEY }
+		// headers: { "x-api-key": "9ccd3bc8-48d1-481a-a7de-3f0f240b381c" }
+		headers: { "x-api-key": import.meta.env.SECRET_KEY }
 	};
 
 	useEffect(() => {
@@ -37,17 +36,19 @@ const SiteContextProvider = ({ children }) => {
 	}, []);
 
 	const addToCart = (url) => {
-		// setCart([...cart, item]);
 		setCatPics(catPics.map((pic) => (pic.url === url ? { ...pic, isInCart: true } : pic)));
 	};
 
 	const removeFromCart = (url) => {
-		// setCart(cart.filter((cartItem) => cartItem.url !== item.url));
 		setCatPics(catPics.map((pic) => (pic.url === url ? { ...pic, isInCart: false } : pic)));
 	};
 
+	const removeAll = () => {
+		setCatPics(catPics.map((pic) => ({ ...pic, isInCart: false })));
+	};
+
 	return (
-		<SiteContext.Provider value={{ catPics, addToCart, removeFromCart }}>
+		<SiteContext.Provider value={{ catPics, addToCart, removeFromCart, removeAll }}>
 			{children}
 		</SiteContext.Provider>
 	);

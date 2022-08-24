@@ -1,41 +1,46 @@
 import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
 import { ItemGrid } from "../components/ItemGrid";
+import React from "react";
+import { Button } from "../components/Button";
 
 function Cart() {
-	const { catPics } = useContext(SiteContext);
+	const { itemsInCart, removeAll } = useContext(SiteContext);
 
-	const itemsInCart = catPics.filter((pic) => pic.isInCart).length;
-	const listInCart = catPics.filter((pic) => pic.isInCart);
-	const total = listInCart.reduce((acc, curr) => acc + curr.price, 0);
+	const itemsLength = itemsInCart.length;
+	const total = itemsInCart.reduce((acc, curr) => acc + curr.price, 0);
 
 	return (
 		<>
 			<h1>Cart Items</h1>
 			<div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start" }}>
-				<section className="grid_container grid_container_cart flex-75">
-					{itemsInCart > 0 ? (
+				<section
+					className={`grid_container grid_container_cart ${itemsLength > 0 && "flex-75"}`}
+				>
+					{itemsLength > 0 ? (
 						<>
-							{listInCart.map((pic) => {
+							{itemsInCart.map((pic) => {
 								return <ItemGrid key={pic.url} catPics={pic} />;
 							})}
 						</>
 					) : (
-						<h2>No items in cart</h2>
+						<h4>No items in cart</h4>
 					)}
 				</section>
-				{itemsInCart > 0 && (
+				{itemsLength > 0 && (
 					<article className="grid_container__total_price">
 						<h2>Your Items:</h2>
 						<hr />
 						<ul>
-							{listInCart.map((item) => (
-								<li>{item.title}</li>
+							{itemsInCart.map((item) => (
+								<li key={item.url}>{item.title}</li>
 							))}
 						</ul>
 						<hr />
 						<h3>Total Price:</h3>
 						<span className="grid_container__price">${total}</span>
+						<hr />
+						<Button type="checkout" classes="btn-icon" handleFunction={removeAll} />
 					</article>
 				)}
 			</div>

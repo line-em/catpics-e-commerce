@@ -1,3 +1,4 @@
+import React from "react";
 import { ShoppingCart, X, Info } from "phosphor-react";
 
 export const Button = (props) => {
@@ -20,6 +21,12 @@ export const Button = (props) => {
 				<>
 					<X weight="bold" />
 					Close
+				</>
+			)}
+			{props.type === "checkout" && (
+				<>
+					<ShoppingCart weight="duotone" size={20} />
+					Checkout
 				</>
 			)}
 		</button>
