@@ -1,5 +1,6 @@
 {
 	"name": "cat-pics-commerce",
+	"homepage": "https://line-em.github.io/catpics-e-commerce/",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
