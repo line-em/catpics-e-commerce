@@ -11,11 +11,9 @@ function App() {
 			<Nav />
 			<main>
 				<Routes>
-					<Route path="/catpics-e-commerce" element={<Home />}>
-						<Route index element={<Home />} />
-						<Route path="/cart" element={<Cart />} />
-						<Route path="/checkout" element={<Checkout />} />
-					</Route>
+					<Route path="/" element={<Home />} />
+					<Route path={`/cart`} element={<Cart />} />
+					<Route path="/checkout" element={<Checkout />} />
 				</Routes>
 			</main>
 		</SiteContextProvider>
@@ -23,3 +21,11 @@ function App() {
 }
 
 export default App;
+
+// <Routes>
+// 	<Route path="/catpics-e-commerce" element={<Home />}>
+// 		<Route index element={<Home />} />
+// 		<Route path="/cart" element={<Cart />} />
+// 		<Route path="/checkout" element={<Checkout />} />
+// 	</Route>
+// </Routes>;
