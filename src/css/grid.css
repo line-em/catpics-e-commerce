@@ -6,6 +6,13 @@
 	margin: 1rem auto;
 }
 
+.white-wrapper {
+	border-radius: 1rem;
+	margin: 3rem auto;
+	border: 1px solid var(--purple-accent-light-03);
+	background-color: var(--white-02);
+}
+
 @media screen and (max-width: 278px) {
 	.grid_container {
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -23,8 +30,9 @@
 	justify-content: center;
 	text-align: center;
 	background-color: var(--purple-accent-light-03);
+	border: 1px solid var(--purple-accent-light);
 	border-radius: 1rem;
-	padding: 10px;
+	padding: 12px;
 }
 
 .grid_container__img {
@@ -87,6 +95,7 @@
 	padding: 2rem;
 	border: 1px solid var(--purple-accent-light);
 	border-radius: 1rem;
+	background-color: var(--white-02);
 }
 
 @media screen and (max-width: 520px) {

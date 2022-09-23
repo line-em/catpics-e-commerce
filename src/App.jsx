@@ -9,7 +9,7 @@ function App() {
 	return (
 		<SiteContextProvider>
 			<Nav />
-			<main>
+			<main className="white-wrapper">
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path={`/cart`} element={<Cart />} />

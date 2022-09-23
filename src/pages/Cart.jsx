@@ -19,6 +19,7 @@ function Cart() {
 	return (
 		<>
 			<h1>Cart Items</h1>
+			<hr />
 			<div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start" }}>
 				<section
 					className={`grid_container grid_container_cart ${itemsLength > 0 && "flex-75"}`}
