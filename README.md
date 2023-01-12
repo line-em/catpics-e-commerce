@@ -7,6 +7,13 @@ Although this is a Scrimba project, I mostly did it on my own: I coded and check
 
 It's very simple, but has lots of things I've been learning along the way. Here's a breakdown of what I used, and more screenshots can be found further down.
 
+## Todo
+
+**2023 update**
+
+-   Update the images from this file;
+-   use useReducer in various parts of this proect for better organization.
+
 **React Tech**
 
 -   Custom Hooks
