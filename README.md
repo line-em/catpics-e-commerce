@@ -1,18 +1,11 @@
 # Cat Pics E-Commerce
 
-![](<./public/thmb (3).png>)
+![](<./public/thmb (1).png>)
 
 A React project to mix a little bit of everything I've learned so far! 🎉
 Although this is a Scrimba project, I mostly did it on my own: I coded and checked the videos _later_, so I could see what I could do differently or not, etc. In general though, I'm very proud that I've managed it all by myself.
 
 It's very simple, but has lots of things I've been learning along the way. Here's a breakdown of what I used, and more screenshots can be found further down.
-
-## Todo
-
-**2023 update**
-
--   Update the images from this file;
--   use useReducer in various parts of this proect for better organization.
 
 **React Tech**
 
@@ -33,6 +26,8 @@ It's very simple, but has lots of things I've been learning along the way. Here'
 -   Phosphor React (my absolute favorite icon library!
 
 ## Improvements and General Assessment
+
+**2023**: I can see now how useReduce would make the code more straightforward, so adding it would be my priority. On the styling side, I'd make further changes in the modal.
 
 Most important, I'd add a mini back end. This is but a barebones e-commerce site, and it wouldn't be complete without it. That would allow better security and adding more things to the site.
 
