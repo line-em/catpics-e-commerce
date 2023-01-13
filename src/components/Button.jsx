@@ -20,7 +20,7 @@ export const Button = (props) => {
 			{props.type === "close" && (
 				<>
 					<X weight="bold" />
-					Close
+					{/* Close */}
 				</>
 			)}
 			{props.type === "checkout" && (

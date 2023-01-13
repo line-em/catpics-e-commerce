@@ -15,9 +15,11 @@ export const GridInfo = ({ price, url, title, type, isInCart }) => {
 	}, []);
 
 	return (
-		<div className={`grid_container__info ${type !== "shop" ? "flex_column" : ""}`}>
-			{type !== "shop" ? <h4>{title}</h4> : ""}
-			<p className="grid_container__price">$ {price}</p>
+		<div className={`grid_container__info ${type !== "shop" ? "modal__price" : ""}`}>
+			<div>
+				{type !== "shop" ? <h4>{title}</h4> : ""}
+				<p className="grid_container__price">$ {price}</p>
+			</div>
 			{inCart ? (
 				<Button
 					classes="btn-icon btn-red"
