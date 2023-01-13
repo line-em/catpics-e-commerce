@@ -20,14 +20,12 @@ function Cart() {
 		<>
 			<h1>Cart Items</h1>
 			<hr />
-			<div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-start" }}>
-				<section
-					className={`grid_container grid_container_cart ${itemsLength > 0 && "flex-75"}`}
-				>
+			<div className="grid_container__outer_cart">
+				<section className={`grid_container grid_container_cart`}>
 					{itemsLength > 0 ? (
 						<>
 							{itemsInCart.map((pic) => {
-								return <ItemGrid key={pic.url} catPics={pic} />;
+								return <ItemGrid key={pic.url} catPics={pic} type="checkout" />;
 							})}
 						</>
 					) : (

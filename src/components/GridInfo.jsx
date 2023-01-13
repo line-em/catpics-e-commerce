@@ -15,7 +15,11 @@ export const GridInfo = ({ price, url, title, type, isInCart }) => {
 	}, []);
 
 	return (
-		<div className={`grid_container__info ${type !== "shop" ? "modal__price" : ""}`}>
+		<div
+			className={`grid_container__info ${
+				type === "shop" ? "" : type === "checkout" ? "grid_item__info" : "modal__price"
+			}`}
+		>
 			<div>
 				{type !== "shop" ? <h4>{title}</h4> : ""}
 				<p className="grid_container__price">$ {price}</p>
