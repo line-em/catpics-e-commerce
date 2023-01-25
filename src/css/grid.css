@@ -21,12 +21,16 @@
 	}
 }
 
-.white-wrapper {
+.base-wrapper {
+	margin: 2rem auto;
+}
+
+.base-wrapper__style {
+	padding: 1.5rem 1rem;
 	border-radius: 1rem;
-	margin: 4rem auto;
 	border: 1px solid var(--purple-accent-light-03);
 	background-color: var(--white-02);
-	padding-block-end: 2rem;
+	box-shadow: var(--box-shadow);
 }
 
 @media screen and (max-width: 278px) {

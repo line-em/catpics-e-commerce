@@ -21,7 +21,7 @@ export default [
 	},
 	{
 		id: 6,
-		title: "Hsssssssssss"
+		title: "Purr-fect Storm"
 	},
 	{
 		id: 7,
@@ -41,7 +41,7 @@ export default [
 	},
 	{
 		id: 11,
-		title: "Sir Scratch"
+		title: "Purr-fect Stranger"
 	},
 	{
 		id: 12,
@@ -78,5 +78,37 @@ export default [
 	{
 		id: 20,
 		title: "I'm feline good."
+	},
+	{
+		id: 21,
+		title: "Keep calm and purr on."
+	},
+	{
+		id: 22,
+		title: "Paws for a moment"
+	},
+	{
+		id: 23,
+		title: "Grumpy cat-itude."
+	},
+	{
+		id: 24,
+		title: "You can't handle the purr-fection"
+	},
+	{
+		id: 25,
+		title: "A purr-fect day"
+	},
+	{
+		id: 26,
+		title: "Feline the Heat"
+	},
+	{
+		id: 27,
+		title: "The cat-ness Monster"
+	},
+	{
+		id: 28,
+		title: "The Cat Club"
 	}
 ];

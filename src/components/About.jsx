@@ -1,13 +1,25 @@
+import { ArrowsClockwise } from "phosphor-react";
+
 export const About = () => (
-	<>
-		<h1>Hey there! 😺</h1>
-		<p>
-			This is a hypothetical store for all the kitty pics you want! Every refresh, new pics
-			are shown to you. You can add them to your cart and checkout when you are ready. 😺
-		</p>
-		<p>
-			<strong>Note:</strong> This is not a real store! Just a fun little project to study
-			several React concepts.
-		</p>
-	</>
+	<main className="intro">
+		<button className="circle">
+			<ArrowsClockwise weight="duotone" size={80} />
+		</button>
+		<div className="base-wrapper__style">
+			<h1>Welcome to the purr-fect destination for cat lovers everywhere! 🐱</h1>
+			<p>
+				Here at our store, you'll find a wide variety of adorable and unique cat images
+				that are sure to bring a smile to your face. With new images added every refresh,
+				there's always something new and exciting to discover.{" "}
+				<strong>Click the button to refresh your pics selection!</strong>
+			</p>
+			<p>
+				Take a look around, and add your favorite images to your cart. We can't wait to
+				help you bring some feline joy into your life! 😺
+			</p>
+			<small>
+				<strong>Note:</strong> This is not a real store!
+			</small>
+		</div>
+	</main>
 );

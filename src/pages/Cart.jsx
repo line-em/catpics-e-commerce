@@ -1,5 +1,6 @@
 import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
+import { ShoppingCart } from "phosphor-react";
 import { ItemGrid } from "../components/ItemGrid";
 import { Button } from "../components/Button";
 import { useNavigate } from "react-router-dom";
@@ -17,8 +18,11 @@ function Cart() {
 	};
 
 	return (
-		<>
-			<h1>Cart Items</h1>
+		<section className="base-wrapper base-wrapper__style">
+			<header>
+				<ShoppingCart size={50} weight={"duotone"} color="var(--purple-accent)" />
+				<h1>Cart Items</h1>
+			</header>
 			<hr />
 			<div className="grid_container__outer_cart">
 				<section className={`grid_container grid_container_cart`}>
@@ -49,7 +53,7 @@ function Cart() {
 					</article>
 				)}
 			</div>
-		</>
+		</section>
 	);
 }
 

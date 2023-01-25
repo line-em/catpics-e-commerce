@@ -3,7 +3,7 @@ import { Modal } from "./Modal";
 import PropTypes from "prop-types";
 import { useToggle } from "../hooks/useToggle";
 
-export const GridImage = ({ url, title, price, isInCart }) => {
+export const GridImage = ({ url, title, price }) => {
 	const [showModal, toggleModal] = useToggle(false);
 	const [hover, toggleHover] = useToggle(false);
 
@@ -24,7 +24,6 @@ export const GridImage = ({ url, title, price, isInCart }) => {
 				url={url}
 				title={title}
 				price={price}
-				isInCart={isInCart}
 				showModal={showModal}
 				toggleModal={toggleModal}
 			/>

@@ -2,7 +2,7 @@ import { Button } from "./Button";
 import { GridInfo } from "./GridInfo";
 import PropTypes from "prop-types";
 
-export const Modal = ({ url, title, price, isInCart, showModal, toggleModal }) => {
+export const Modal = ({ url, title, price, showModal, toggleModal }) => {
 	const modalStyle = {
 		display: showModal ? "flex" : "none"
 	};
@@ -23,7 +23,7 @@ export const Modal = ({ url, title, price, isInCart, showModal, toggleModal }) =
 					<div className="modal__img">
 						<img src={url} alt={title} />
 					</div>
-					<GridInfo url={url} title={title} price={price} isInCart={isInCart} />
+					<GridInfo url={url} title={title} price={price} />
 				</div>
 			</div>
 		</>

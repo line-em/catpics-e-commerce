@@ -1,7 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
-import { ShoppingCart, Cat } from "phosphor-react";
+import { NavLink } from "react-router-dom";
+import { ShoppingCart } from "phosphor-react";
 import { SiteContext } from "../context/SiteContext";
 import { useContext } from "react";
+import Logo from "./Logo";
 
 export const Nav = () => {
 	const { itemsInCart } = useContext(SiteContext);
@@ -9,12 +10,7 @@ export const Nav = () => {
 
 	return (
 		<nav className="navbar">
-			<Link to="/">
-				<h2>
-					<Cat weight="duotone" />
-					Cat Pics
-				</h2>
-			</Link>
+			<Logo />
 			<NavLink to="/cart">
 				<ul>
 					<li>Cart:</li>

@@ -4,15 +4,8 @@ import { useContext, useEffect } from "react";
 import { SiteContext } from "../context/SiteContext";
 import PropTypes from "prop-types";
 
-export const GridInfo = ({ price, url, title, type, isInCart }) => {
-	const [inCart, toggleInCart] = useToggle(false);
-	const { addToCart, removeFromCart } = useContext(SiteContext);
-
-	useEffect(() => {
-		if (isInCart) {
-			toggleInCart(true);
-		}
-	}, []);
+export const GridInfo = ({ price, url, title, type }) => {
+	const { addToCart, removeFromCart, itemsInCart } = useContext(SiteContext);
 
 	return (
 		<div
@@ -24,13 +17,12 @@ export const GridInfo = ({ price, url, title, type, isInCart }) => {
 				{type !== "shop" ? <h4>{title}</h4> : ""}
 				<p className="grid_container__price">$ {price}</p>
 			</div>
-			{inCart ? (
+			{itemsInCart.some((item) => item.url === url) ? (
 				<Button
 					classes="btn-icon btn-red"
 					type="removeCart"
 					handleFunction={() => {
 						removeFromCart(url);
-						toggleInCart();
 					}}
 				/>
 			) : (
@@ -39,7 +31,6 @@ export const GridInfo = ({ price, url, title, type, isInCart }) => {
 					type="addCart"
 					handleFunction={() => {
 						addToCart(url);
-						toggleInCart();
 					}}
 				/>
 			)}
@@ -51,6 +42,5 @@ GridInfo.propTypes = {
 	price: PropTypes.number,
 	url: PropTypes.string,
 	title: PropTypes.string,
-	type: PropTypes.string,
-	isInCart: PropTypes.bool
+	type: PropTypes.string
 };
