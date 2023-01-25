@@ -13,6 +13,6 @@ export const ItemGrid = ({ catPics, type }) => {
 };
 
 ItemGrid.propTypes = {
-	catPics: PropTypes.array,
+	catPics: PropTypes.object,
 	type: PropTypes.string
 };
