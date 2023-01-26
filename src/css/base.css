@@ -82,6 +82,10 @@ header {
 	align-items: center;
 }
 
+header svg {
+	flex-shrink: 0;
+}
+
 @media screen and (max-width: 310px) {
 	header {
 		flex-wrap: wrap;
